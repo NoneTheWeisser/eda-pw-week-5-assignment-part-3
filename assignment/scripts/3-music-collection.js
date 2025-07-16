@@ -9,23 +9,18 @@ function addToCollection(collection, title, artist, yearPublished){
     yearPublished: yearPublished,
   }
 collection.push(newRecord);
+console.log(`Adding in ${newRecord.title} by ${newRecord.artist}`);
 return newRecord;
 }
 
-console.log(`Adding in first album`, addToCollection(myCollection, 'Rumors', 'Fleetwood Mac', '1977'));
-console.log(`Adding in second album`, addToCollection(myCollection, 'Mirage', 'Fleetwood Mac', '1982'));
-console.log(`Adding in third album`, addToCollection(myCollection, 'Honky Chateau', 'Elton John', '1972'));
-console.log(`Adding in fourth album`, addToCollection(myCollection, 'Delta', 'Mumford & Sons', '2018'));
-console.log(`Adding in fifth album`, addToCollection(myCollection, 'OK Computers', 'Radiohead', '1997'));
-console.log(`Adding in sixth album`, addToCollection(myCollection, 'In Rainbows', 'Radiohead', '2007'));
+addToCollection(myCollection, 'Rumors', 'Fleetwood Mac', '1977');
+addToCollection(myCollection, 'Mirage', 'Fleetwood Mac', '1982');
+addToCollection(myCollection, 'Honky Chateau', 'Elton John', '1972');
+addToCollection(myCollection, 'Delta', 'Mumford & Sons', '2018');
+addToCollection(myCollection, 'OK Computer', 'Radiohead', '1997');
+addToCollection(myCollection, 'In Rainbows', 'Radiohead', '2007');
 
-console.log(`My collection is:`, myCollection);
-
-
-
-
-
-
+console.log('Full Collection:', myCollection);
 
 
 
