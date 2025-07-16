@@ -2,7 +2,7 @@ console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 const myCollection=[];
 function addToCollection(collection, title, artist, yearPublished){
-  console.log(`In addTocollection`);
+  console.log(`I bought a new record!`);
   const newRecord = {
     title: title,
     artist: artist,
@@ -11,16 +11,15 @@ function addToCollection(collection, title, artist, yearPublished){
 collection.push(newRecord);
 return newRecord;
 }
-// addToCollection()
-// console.log(`I have a new record!`, newRecord);
 
+console.log(`Adding in first album`, addToCollection(myCollection, 'Rumors', 'Fleetwood Mac', '1977'));
+console.log(`Adding in second album`, addToCollection(myCollection, 'Mirage', 'Fleetwood Mac', '1982'));
+console.log(`Adding in third album`, addToCollection(myCollection, 'Honky Chateau', 'Elton John', '1972'));
+console.log(`Adding in fourth album`, addToCollection(myCollection, 'Delta', 'Mumford & Sons', '2018'));
+console.log(`Adding in fifth album`, addToCollection(myCollection, 'OK Computers', 'Radiohead', '1997'));
+console.log(`Adding in sixth album`, addToCollection(myCollection, 'In Rainbows', 'Radiohead', '2007'));
 
-
-
-
-
-
-
+console.log(`My collection is:`, myCollection);
 
 
 
