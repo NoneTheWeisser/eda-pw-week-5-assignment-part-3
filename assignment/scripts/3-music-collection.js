@@ -23,6 +23,16 @@ addToCollection(myCollection, 'In Rainbows', 'Radiohead', '2007');
 console.log('Full Collection:', myCollection);
 
 
+function showCollection(collection){
+  // console.log(`Show collection:`, collection);
+  for (let album of collection){
+    console.log(`${album.title} by ${album.artist}, published in ${album.yearPublished}`);
+  }
+
+}
+
+showCollection(myCollection);
+
 
 
 
