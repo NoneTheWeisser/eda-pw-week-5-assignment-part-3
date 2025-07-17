@@ -36,11 +36,21 @@ showCollection(myCollection);
 
 function findByArtist (collection, artist){
    const matchArtist=[];
-   
+   for (let album of collection) {
+    if (album.artist === artist){
+      matchArtist.push(album)
+    } 
+  }
+  return matchArtist;
 }
 
+console.log('Albums by Radiohead:', findByArtist(myCollection, 'Radiohead'));
+console.log('Albums by Mumford & Sons:', findByArtist(myCollection, 'Mumford & Sons'));
+console.log('Albums by Elton John:', findByArtist(myCollection, 'Elton John'));
+console.log('Albums by Fleetwood Mac:', findByArtist(myCollection, 'Fleetwood Mac'));
 
-
+console.log('Albums by John Mayer:', findByArtist(myCollection, 'John Mayer'));
+console.log('Albums by Dave Matthews Band:', findByArtist(myCollection, 'Dave Matthews Band'));
 
 
 
