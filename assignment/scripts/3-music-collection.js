@@ -15,7 +15,7 @@ return newRecord;
 
 addToCollection(myCollection, 'Rumors', 'Fleetwood Mac', '1977');
 addToCollection(myCollection, 'Mirage', 'Fleetwood Mac', '1982');
-addToCollection(myCollection, 'Honky Chateau', 'Elton John', '1972');
+addToCollection(myCollection, 'Honky Chateau', 'Elton John', '1977');
 addToCollection(myCollection, 'Delta', 'Mumford & Sons', '2018');
 addToCollection(myCollection, 'OK Computer', 'Radiohead', '1997');
 addToCollection(myCollection, 'In Rainbows', 'Radiohead', '2007');
@@ -53,9 +53,27 @@ console.log('Albums by John Mayer:', findByArtist(myCollection, 'John Mayer'));
 console.log('Albums by Dave Matthews Band:', findByArtist(myCollection, 'Dave Matthews Band'));
 
 
+function search (collection, searchCriteria){
+  console.log(`Searching for matching artists or years`)
+  if (!searchCriteria || !searchCriteria.artist || !searchCriteria.year){
+    return collection;
+  }
+  const newCollection = [];
 
+  for (const album of collection){
+    if (album.artist === searchCriteria.artist &&
+    album.yearPublished === searchCriteria.year){
+    newCollection.push(album);
+  }
+}
+console.log('Matching albums:', newCollection);
+return newCollection;
+}
 
-
+console.log(search(myCollection, { artist: 'Radiohead', year: '2007' }));
+console.log(search(myCollection, { artist: 'Radiohead' }));
+console.log(search(myCollection, { artist: 'Dave Matthews Band', year: '2015' }));
+console.log(search(myCollection, { year: '1977' }));
 
 
 
