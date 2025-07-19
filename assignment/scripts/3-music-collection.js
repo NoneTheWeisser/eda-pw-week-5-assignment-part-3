@@ -52,7 +52,7 @@ console.log('Albums by Fleetwood Mac:', findByArtist(myCollection, 'Fleetwood Ma
 console.log('Albums by John Mayer:', findByArtist(myCollection, 'John Mayer'));
 console.log('Albums by Dave Matthews Band:', findByArtist(myCollection, 'Dave Matthews Band'));
 
-
+// seems like I'm on the right track for this, but still seeing an error on the html site. 
 function search (collection, searchCriteria){
   console.log(`Searching for matching artists or years`)
   if (!searchCriteria || !searchCriteria.artist || !searchCriteria.year){
