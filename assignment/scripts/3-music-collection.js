@@ -6,7 +6,7 @@ function addToCollection(collection, title, artist, yearPublished){
   const newRecord = {
     title: title,
     artist: artist,
-    yearPublished: yearPublished,
+    yearPublished: Number(yearPublished)
   }
 collection.push(newRecord);
 console.log(`Adding in ${newRecord.title} by ${newRecord.artist}`);
@@ -57,7 +57,7 @@ function search (collection, searchCriteria){
   // debugger;
   // if searchCriteria is missing keys, return full collection
   console.log("Search criteria is:", searchCriteria);
-  if (!searchCriteria || !searchCriteria.artist || !searchCriteria.year){
+  if (!searchCriteria || !searchCriteria.artist || !searchCriteria.yearPublished){
   console.log("Returning full collection because searchCriteria is invalid");
     return collection;
   }
@@ -66,7 +66,7 @@ function search (collection, searchCriteria){
   for (const album of collection){
     console.log(`Checking album: ${album.title} by ${album.artist}, year ${album.yearPublished}`);
     if (album.artist === searchCriteria.artist &&
-    album.yearPublished === searchCriteria.year){
+    album.yearPublished === searchCriteria.yearPublished){
       console.log('Match Found!');
     newCollection.push(album);
   }
@@ -83,8 +83,9 @@ console.log(search(myCollection, { artist: 'Radiohead' }));
 console.log(search(myCollection, { artist: 'Dave Matthews Band', year: '2015' }));
 console.log(search(myCollection, { year: '1977' }));
 // console.log(search(myCollection, {}));
-console.log(search(myCollection, { artist: 'Wilco', year: '1908' }));
 
+console.log('--- Searching for Wilco, 1908 (should return empty) ---');
+search(myCollection, { artist: 'Wilco', year: 1908 });
 
 
 
