@@ -54,16 +54,20 @@ console.log('Albums by Dave Matthews Band:', findByArtist(myCollection, 'Dave Ma
 
 // seems like I'm on the right track for this, but still seeing an error on the html site. 
 function search (collection, searchCriteria){
-  // console.log(`Searching for matching artists or years`)
+  // debugger;
   // if searchCriteria is missing keys, return full collection
+  console.log("Search criteria is:", searchCriteria);
   if (!searchCriteria || !searchCriteria.artist || !searchCriteria.year){
+  console.log("Returning full collection because searchCriteria is invalid");
     return collection;
   }
   const newCollection = [];
 
   for (const album of collection){
+    console.log(`Checking album: ${album.title} by ${album.artist}, year ${album.yearPublished}`);
     if (album.artist === searchCriteria.artist &&
     album.yearPublished === searchCriteria.year){
+      console.log('Match Found!');
     newCollection.push(album);
   }
 }
@@ -71,11 +75,16 @@ console.log('Matching albums:', newCollection);
 return newCollection;
 }
 
-console.log(search(myCollection, { artist: 'Radiohead', year: '2007' }));
+console.log('--- Searching for Radiohead, 1997 ---');
+search(myCollection, { artist: 'Radiohead', year: '1997' });
+
+// console.log(search(myCollection, { artist: 'Radiohead', year: '2007' }));
 console.log(search(myCollection, { artist: 'Radiohead' }));
 console.log(search(myCollection, { artist: 'Dave Matthews Band', year: '2015' }));
 console.log(search(myCollection, { year: '1977' }));
-console.log(search(myCollection, {}));
+// console.log(search(myCollection, {}));
+console.log(search(myCollection, { artist: 'Wilco', year: '1908' }));
+
 
 
 
